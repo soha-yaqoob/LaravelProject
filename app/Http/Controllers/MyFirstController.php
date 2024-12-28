@@ -87,4 +87,11 @@ public function updateData(Request $req, $id){
     $stdRecord->save();
     return redirect('select');
 }
+
+public function deleteRecord(Request $req, $id){
+    $std=new Student();
+    $stdRecord=$std::find($id);
+    $stdRecord->delete ();
+    return redirect('select');
+}
 }
